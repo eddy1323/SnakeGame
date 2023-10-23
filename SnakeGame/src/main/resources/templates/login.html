@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" >
+    <title>Login screen</title>
+</head>
+<body>
+<div class="login_form">
+    <h1 th:text="#{user.login}"></h1>
+    <form th:action="@{/login}" method="post">
+        <label for="username" th:text="#{user.username}" class="large-label"></label><br/>
+        <input type="text" id="username" class="custom-input short-input" name="username" required><br/>
+
+        <label for="password" th:text="#{user.password}" class="large-label"></label><br/>
+        <input type="password" id="password" class="custom-input short-input" name="password" required><br/>
+
+        <button type="submit" class="text-button large-font">Login</button>
+        <button type="button" class="text-button large-font" onclick="window.location.href='/index'">Back</button>
+    </form>
+    <div th:if="${errorMessage}" class="error-message">
+        <span th:text="#{${errorMessage}}"></span>
+    </div>
+</div>
+</body>
+</html>

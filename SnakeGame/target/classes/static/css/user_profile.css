@@ -1,0 +1,36 @@
+.user-profile {
+    text-align: center;
+    font-family: 'Shantell Sans', cursive;
+    color: forestgreen;
+    padding: 30px;
+    background-color: rgba(3, 3, 3, 0.73);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+    border: 1px solid #000;
+}
+
+.avatar img {
+    max-width: 100%;
+    height: auto;
+}
+
+.user-info {
+    flex: 1;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 16px;
+}

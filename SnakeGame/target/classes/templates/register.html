@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" >
+    <title>Registration screen</title>
+</head>
+<body>
+<div class="registration_form">
+    <h1 th:text="#{user.register}"></h1>
+    <div th:if="${successMessage}" class="success-message">
+        <span th:text="#{${successMessage}}"></span></div>
+    <form th:action="@{/register}" th:object="${registrationForm}" th:method="post">
+        <label for="email" th:text="#{user.email}"></label><br/>
+        <input type="text" id="email" class="custom-input short-input" th:field="*{email}"><br/><br/>
+
+        <label for="username" th:text="#{user.username}"></label><br/>
+        <input type="text" id="username" class="custom-input short-input" th:field="*{username}"/><br/><br/>
+
+        <label for="password" th:text="#{user.password}"></label><br/>
+        <input type="password" id="password" class="custom-input short-input" th:field="*{password}"/><br/><br/>
+
+        <input type="submit" class="text-button" th:value="#{user.button.register}"/>
+        <input type="reset" class="text-button" th:value="#{user.button.reset}"/>
+        <button type="button" class="text-button" onclick="window.location.href='/index'">Back to Index</button>
+    </form>
+    <div th:if="${errorMessage}" class="error-message">
+        <span th:text="#{${errorMessage}}"></span>
+    </div>
+</div>
+</body>
+</html>

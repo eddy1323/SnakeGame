@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+  <title>User Profile</title>
+  <link rel="stylesheet" type="text/css" th:href="@{/css/user_profile.css}">
+</head>
+<body>
+<div class="user-profile">
+  <div class="avatar">
+    <img src="avatar.jpg" alt="User Avatar">
+  </div>
+  <div class="user-info">
+    <h1 th:text="${user.username}"></h1>
+    <p th:text="${user.description}"></p>
+  </div>
+</div>
+</body>
+</html>

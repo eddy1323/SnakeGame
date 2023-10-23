@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" >
+    <title>User Page</title>
+</head>
+<body>
+<hr/>
+<div class="user-profile">
+<h1>Welcome, <span th:text="${user.username}"></span></h1>
+<a href="/profile">Profile</a>
+<a href="/logout">Logout</a>
+</div>
+</body>
+</html>
